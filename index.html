@@ -3,83 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>KAIST vs POSTECH 주사위 눈 맞추기 설문</title>
+<title>[설문 1] KAIST vs POSTECH 주사위 눈 맞추기</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family:'GmarketSans'; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff'); font-weight:300; font-display:swap; }
+@font-face { font-family:'GmarketSans'; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff'); font-weight:500; font-display:swap; }
+@font-face { font-family:'GmarketSans'; src:url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff'); font-weight:700; font-display:swap; }
+</style>
 <style>
 :root{
-  --ink:#121110;
-  --ink-2:#19160f;
-  --panel:#1c1813;
-  --panel-2:#231e17;
-  --line:#352c22;
-  --kaist:#3a6bc9;
-  --kaist-dark:#173769;
-  --postech:#c22a63;
-  --postech-dark:#701237;
-  --accent:#f6a700;
-  --text:#f4efe5;
-  --text-dim:#a99b87;
-  --ok:#5cbf7c;
-  --font-display:'Space Grotesk','Noto Sans KR',sans-serif;
-  --font-poster:'Anton','Space Grotesk','Noto Sans KR',sans-serif;
-  --font-body:'Noto Sans KR',sans-serif;
+  --ink:#f7f7f7;
+  --ink-2:#f7f7f7;
+  --panel:#ffffff;
+  --panel-2:#eeeeee;
+  --line:#dcdcdc;
+  --kaist:#3d5f92;
+  --kaist-dark:#233c5e;
+  --kaist-top:#8aa8d4;
+  --postech:#8a2a52;
+  --postech-dark:#521a34;
+  --postech-top:#c4779b;
+  --accent:#a97a2e;
+  --accent-dim:#7a5a22;
+  --text:#1c1c1c;
+  --text-dim:#6b6b6b;
+  --ok:#3f9d5c;
+  --font-display:'GmarketSans','Noto Sans KR',sans-serif;
+  --font-poster:'GmarketSans','Noto Sans KR',sans-serif;
+  --font-body:'GmarketSans','Noto Sans KR',sans-serif;
 }
 *{box-sizing:border-box; -webkit-tap-highlight-color:transparent;}
 html,body{margin:0;padding:0;}
 body{
-  background-color:var(--ink);
-  background-image:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E"),
-    linear-gradient(180deg, var(--ink) 0%, var(--ink-2) 100%);
+  background-color:#f7f7f7;
   color:var(--text);
   font-family:var(--font-body);
   min-height:100vh;
   padding:24px 16px 60px;
 }
 .wrap{max-width:720px; margin:0 auto;}
-.poster-bar{height:5px; border-radius:3px; margin-bottom:16px; max-width:560px; margin-left:auto; margin-right:auto;
-  background:linear-gradient(90deg, var(--kaist) 0 50%, var(--postech) 50% 100%);}
-.poster-title{display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; margin:0;}
-.poster-title .k, .poster-title .p{font-family:var(--font-poster); font-size:clamp(24px,6.5vw,34px); text-transform:uppercase; letter-spacing:.01em; line-height:1;}
+.event-banner{
+  text-align:center; font-family:'GmarketSans','Noto Sans KR',sans-serif; font-weight:700; font-size:clamp(15px,4vw,20px);
+  letter-spacing:.03em; color:var(--text); background:var(--ink);
+  padding:14px 22px; margin:0 auto 22px; display:block;
+  width:fit-content; max-width:100%; box-sizing:border-box; line-height:1.4;
+}
+.poster-bar{height:1px; margin-bottom:26px; max-width:560px; margin-left:auto; margin-right:auto; background:var(--line);}
+.poster-title{display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; margin:0;}
+.poster-title .k, .poster-title .p{font-family:var(--font-poster); font-weight:700; font-size:clamp(22px,5.8vw,30px); letter-spacing:.03em; line-height:1;}
 .poster-title .k{color:var(--kaist);}
 .poster-title .p{color:var(--postech);}
-.poster-title .vs{font-family:var(--font-display); font-size:12px; font-weight:700; letter-spacing:.26em; color:var(--text-dim);}
-.poster-sub{text-align:center; font-family:var(--font-display); font-size:10.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--text-dim); margin:4px 0 2px;}
-.subtitle{color:var(--text-dim); font-size:13px; text-align:center; margin:8px 0 22px; line-height:1.6;}
-.steps{display:flex; justify-content:center; gap:10px; margin-bottom:22px;}
+.poster-title .vs{font-family:var(--font-display); font-size:11px; font-weight:600; letter-spacing:.3em; color:var(--text-dim);}
+.poster-sub{text-align:center; font-family:var(--font-display); font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--accent-dim); margin:8px 0 2px;}
+.subtitle{color:var(--text-dim); font-size:13px; text-align:center; margin:10px 0 30px; line-height:1.7;}
+.steps{display:flex; justify-content:center; gap:10px; margin-bottom:28px;}
 .step-dot{display:flex; align-items:center; gap:6px; font-size:11px; color:var(--text-dim); font-family:var(--font-display);}
 .step-dot .n{width:20px; height:20px; border-radius:50%; background:var(--panel-2); border:1px solid var(--line); display:flex; align-items:center; justify-content:center; font-weight:700;}
 .step-dot.active .n{background:var(--accent); color:#241a00; border-color:var(--accent);}
 .step-dot.done .n{background:var(--ok); color:#052711; border-color:var(--ok);}
-.card{background:var(--panel); border:1px solid var(--line); border-radius:4px 22px 4px 22px; padding:22px; max-width:560px; margin:0 auto; position:relative; overflow:hidden;}
-.card::before{content:''; position:absolute; top:0; left:0; right:0; height:3px;
-  background:linear-gradient(90deg, var(--kaist), var(--postech));}
+.card{background:var(--panel); border:1px solid var(--line); border-radius:6px 26px 6px 26px; padding:32px; max-width:560px; margin:0 auto; position:relative; overflow:hidden;
+  box-shadow:0 30px 60px -30px rgba(0,0,0,.6);}
+
 .card.wide{max-width:720px;}
-.field{margin-bottom:16px;}
-label{display:block; font-size:12px; color:var(--text-dim); margin-bottom:6px; font-family:var(--font-display); letter-spacing:.05em;}
+.field{margin-bottom:22px;}
+label{display:block; font-size:12px; color:var(--text-dim); margin-bottom:7px; font-family:var(--font-display); letter-spacing:.05em;}
 input[type=text]{
   width:100%; background:var(--panel-2); border:1px solid var(--line); border-radius:8px;
-  color:var(--text); font-size:15px; padding:11px 12px; font-family:var(--font-body);
+  color:var(--text); font-size:16px; padding:13px 14px; font-family:var(--font-body);
+  transition:border-color .2s ease, box-shadow .2s ease;
 }
-input[type=text]:focus{outline:none; border-color:var(--accent);}
+input[type=text]:focus{outline:none; border-color:var(--accent); box-shadow:0 0 0 3px rgba(169,122,46,.15);}
 .error{font-size:12px; color:var(--postech); margin-top:6px; display:none;}
 .error.show{display:block;}
 button.primary{
-  width:100%; margin-top:6px; background:var(--accent);
-  color:#241a00; border:none; border-radius:4px 14px 4px 14px; padding:13px; font-size:14px; font-weight:700;
-  cursor:pointer; font-family:var(--font-display); letter-spacing:.02em;
+  width:100%; margin-top:10px; background:transparent;
+  color:var(--accent); border:1.5px solid var(--accent); border-radius:4px 14px 4px 14px; padding:14px; font-size:14px; font-weight:600;
+  cursor:pointer; font-family:var(--font-display); letter-spacing:.04em;
+  transition:background .2s ease, color .2s ease, transform .15s ease;
 }
-button.primary:active{transform:scale(.98);}
+button.primary:hover{background:var(--accent); color:#241a00;}
+button.primary:active{background:var(--accent); color:#241a00; transform:scale(.98);}
 button.secondary{
   width:100%; margin-top:8px; background:var(--panel-2); color:var(--text); border:1px solid var(--line);
-  border-radius:8px; padding:10px; font-size:13px; font-weight:700; cursor:pointer; font-family:var(--font-display);
+  border-radius:8px; padding:11px; font-size:13px; font-weight:700; cursor:pointer; font-family:var(--font-display);
+  transition:border-color .2s ease, background .2s ease;
 }
-button.secondary:hover{border-color:var(--accent);}
-.result-badge{text-align:center; padding:20px 10px 4px;}
-.stamp{display:inline-block; border:3px solid var(--accent); border-radius:10px; padding:12px 28px; transform:rotate(-4deg); color:var(--accent);}
-.stamp-label{font-family:var(--font-display); font-size:11px; letter-spacing:.26em; text-transform:uppercase; margin-bottom:2px;}
-.stamp-score{font-family:var(--font-poster); font-size:34px; letter-spacing:.02em; line-height:1;}
+button.secondary:hover{border-color:var(--accent); background:var(--panel);}
+button.secondary:active{border-color:var(--accent); background:var(--panel); transform:scale(.98);}
+.result-badge{text-align:center; padding:24px 10px 4px;}
+.stamp{display:inline-block; border:1.5px solid var(--accent); border-radius:10px; padding:14px 30px; transform:rotate(-3deg); color:var(--accent);}
+.stamp-label{font-family:var(--font-display); font-size:11px; letter-spacing:.28em; text-transform:uppercase; margin-bottom:4px;}
+.stamp-score{font-family:var(--font-poster); font-weight:700; font-size:32px; letter-spacing:.02em; line-height:1;}
 .result-badge .msg{font-size:13px; color:var(--text-dim); margin-top:14px; line-height:1.6;}
 .summary{background:var(--panel-2); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-top:16px; font-size:13px;}
 .summary div{display:flex; justify-content:space-between; padding:4px 0;}
@@ -89,94 +104,102 @@ button.secondary:hover{border-color:var(--accent);}
 
 /* --- duel layout --- */
 .duel{display:flex; flex-wrap:wrap; gap:18px;}
-.pane{flex:1 1 260px; min-width:240px; background:var(--panel-2); border:1px solid var(--line); border-radius:12px; padding:16px;}
-.pane h3{font-family:var(--font-display); font-size:12px; letter-spacing:.06em; color:var(--text-dim); margin:0 0 12px; text-transform:uppercase; text-align:center;}
+.pane{flex:1 1 260px; min-width:240px; background:var(--panel-2); border:1px solid var(--line); border-radius:12px; padding:22px;}
+.pane h3{font-family:var(--font-display); font-size:12px; letter-spacing:.06em; color:var(--text-dim); margin:0 0 18px; text-transform:uppercase; text-align:center;}
 .pane .hint-sm{font-size:11px; color:var(--text-dim); text-align:center; margin-top:10px; line-height:1.6;}
 
-/* --- 3D dice --- */
-.die-stage{ --size:120px; width:var(--size); height:var(--size); margin:6px auto; }
-.piece2{width:100%; height:100%; position:relative; perspective:calc(var(--size) * 2.6);}
-.tilt2{position:relative; width:100%; height:100%; transform-style:preserve-3d; transform:rotateX(-20deg) rotateY(28deg);}
-.cube2{position:relative; width:100%; height:100%; transform-style:preserve-3d; transition:transform .5s cubic-bezier(.4,0,.2,1);}
-.face2{
-  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
-  border-radius:0; color:#fff;
-  box-shadow:
-    inset 0 0 0 1px rgba(255,255,255,.22),
-    inset 0 8px 14px rgba(255,255,255,.16),
-    inset 0 -10px 16px rgba(0,0,0,.4),
-    0 4px 10px rgba(0,0,0,.4);
-  backface-visibility:hidden; -webkit-backface-visibility:hidden;
-  background:
-    radial-gradient(120% 130% at 26% 18%, rgba(255,255,255,.4), rgba(255,255,255,0) 48%),
-    linear-gradient(155deg, var(--postech), var(--postech-dark));
+/* --- 3D dice (isometric, no perspective) --- */
+.die-stage{ --size:120px; width:var(--size); height:var(--size); margin:6px auto; position:relative; }
+.iso-cube{
+  position:relative; width:100%; height:100%; transform-style:preserve-3d;
+  transform:rotateX(-30deg) rotateY(-45deg);
+  transition:transform .3s ease;
 }
-.face2{ font-size:calc(var(--size) * 0.34); }
-.die-stage{ position:relative; }
-.face2.front{ transform:translateZ(calc(var(--size)/2 + 1px)); }
-.face2.back{ transform:rotateY(180deg) translateZ(calc(var(--size)/2 + 1px)); }
-.face2.right{ transform:rotateY(90deg) translateZ(calc(var(--size)/2 + 1px)); }
-.face2.left{ transform:rotateY(-90deg) translateZ(calc(var(--size)/2 + 1px)); }
-.face2.top{ transform:rotateX(-90deg) translateZ(calc(var(--size)/2 + 1px)); }
-.face2.bottom{ transform:rotateX(90deg) translateZ(calc(var(--size)/2 + 1px)); }
-.die-stage.answer{ --size:98px; margin:6px auto 34px; touch-action:none; cursor:grab; }
+.iso-face{
+  position:absolute; width:100%; height:100%; display:flex; align-items:center; justify-content:center;
+  backface-visibility:hidden; -webkit-backface-visibility:hidden;
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.15);
+  font-size:calc(var(--size) * 0.34); color:#fff;
+}
+.iso-face.top{ transform:rotateX(90deg) translateZ(calc(var(--size)/2 + 1px)); background:var(--postech-top); color:#3a0d20; }
+.iso-face.bottom{ transform:rotateX(-90deg) translateZ(calc(var(--size)/2 + 1px)); background:var(--postech-top); color:#3a0d20; }
+.iso-face.front{ transform:translateZ(calc(var(--size)/2 + 1px)); background:var(--postech); }
+.iso-face.back{ transform:rotateY(180deg) translateZ(calc(var(--size)/2 + 1px)); background:var(--postech); }
+.iso-face.left{ transform:rotateY(-90deg) translateZ(calc(var(--size)/2 + 1px)); background:var(--postech-dark); }
+.iso-face.right{ transform:rotateY(90deg) translateZ(calc(var(--size)/2 + 1px)); background:var(--postech-dark); }
+.die-stage.answer{ --size:98px; margin:44px auto 34px; touch-action:none; cursor:grab; }
 .die-stage.answer:active{ cursor:grabbing; }
+.die-stage.bounce .iso-cube{ animation:isoBounce .3s ease; }
+@keyframes isoBounce{0%{transform:rotateX(-30deg) rotateY(-45deg) scale(1);}45%{transform:rotateX(-30deg) rotateY(-45deg) scale(1.15);}100%{transform:rotateX(-30deg) rotateY(-45deg) scale(1);}}
 
 .current-face-label{ text-align:center; font-size:13px; margin-top:16px; font-family:var(--font-display); }
 .current-face-label b{ color:var(--accent); font-size:16px; }
 .current-face-label .ico{ width:16px; height:16px; }
 
-/* --- path grid (주사위와 동일한 시점의 3D, 주사위가 시작 칸 위에 얹혀 있음) --- */
+/* --- path grid (주사위와 동일한 아이소메트릭 시점, 주사위가 시작 칸 위에 얹혀 있음) --- */
 .path-stage{ perspective:700px; margin:14px auto 10px; display:flex; justify-content:center; }
 .path-grid{ display:grid; gap:7px; transform-style:preserve-3d; transform:rotateX(-20deg) rotateY(28deg); width:max-content; }
 .path-cell{
   width:56px; height:56px; border-radius:6px; background:var(--panel);
   border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
   position:relative; font-size:13px; color:var(--text-dim); transform-style:preserve-3d;
-  box-shadow:0 5px 0 rgba(0,0,0,.4), inset 0 0 0 1px rgba(255,255,255,.06);
+  box-shadow:0 5px 0 rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.4);
   font-family:var(--font-display); font-weight:700;
 }
 .path-cell.active{ background:linear-gradient(155deg, var(--kaist), var(--kaist-dark)); color:#fff; border-color:var(--kaist);
   box-shadow:0 5px 0 var(--kaist-dark), inset 0 0 0 1px rgba(255,255,255,.15); }
-.path-cell.final{ background:linear-gradient(155deg, var(--accent), #c98004); color:#241a00; border-color:var(--accent); font-size:20px;
-  box-shadow:0 5px 0 #a87c04, inset 0 0 0 1px rgba(255,255,255,.2); }
+.path-cell.final{ background:linear-gradient(155deg, var(--accent), #8a6528); color:#fff; border-color:var(--accent); font-size:20px;
+  box-shadow:0 5px 0 #6e4f1c, inset 0 0 0 1px rgba(255,255,255,.2); }
 .path-cell .arrow{ position:absolute; font-size:16px; color:var(--accent); z-index:2; font-weight:700; }
 .path-cell .arrow.N{ top:-15px; } .path-cell .arrow.S{ bottom:-15px; }
 .path-cell .arrow.E{ right:-15px; } .path-cell .arrow.W{ left:-15px; }
 .grid-die{ --size:44px; width:var(--size); height:var(--size); transform-style:preserve-3d; transform:translateZ(calc(var(--size)/2)); }
+.grid-die .face2{
+  position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+  color:#fff; font-size:calc(var(--size) * 0.5);
+  box-shadow:inset 0 0 0 1px rgba(255,255,255,.2), 0 2px 6px rgba(0,0,0,.3);
+  backface-visibility:hidden; -webkit-backface-visibility:hidden;
+  background:linear-gradient(155deg, var(--postech), var(--postech-dark));
+}
+.grid-die .face2.front{ transform:translateZ(calc(var(--size)/2 + 1px)); }
+.grid-die .face2.back{ transform:rotateY(180deg) translateZ(calc(var(--size)/2 + 1px)); }
+.grid-die .face2.right{ transform:rotateY(90deg) translateZ(calc(var(--size)/2 + 1px)); }
+.grid-die .face2.left{ transform:rotateY(-90deg) translateZ(calc(var(--size)/2 + 1px)); }
+.grid-die .face2.top{ transform:rotateX(-90deg) translateZ(calc(var(--size)/2 + 1px)); }
+.grid-die .face2.bottom{ transform:rotateX(90deg) translateZ(calc(var(--size)/2 + 1px)); }
 
 .swipe-hint{ text-align:center; margin-top:16px; font-size:11px; color:var(--text-dim); }
 
 .ico{width:1em; height:1em; display:inline-block; vertical-align:-0.15em;}
 .ico.line{fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round;}
 .ico.fill{fill:currentColor; stroke:none;}
+@media (max-width:420px){
+  body{ padding:18px 10px 40px; }
+  .card{ padding:20px 16px; }
+  .pane{ padding:16px; }
+}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <div class="event-banner">과학퀴즈 경기중 이벤트 : 가위바위보 체스 튜토리얼</div>
   <div class="poster-bar"></div>
   <div class="poster-title"><span class="k">KAIST</span><span class="vs">VS</span><span class="p">POSTECH</span></div>
-  <div class="poster-sub">Science Quiz · 주사위 눈 맞추기</div>
+  <div class="poster-sub">설문 1 · Science Quiz · 주사위 눈 맞추기</div>
   <div class="subtitle">이름과 POVIS ID만 남겨도 참가 점수 10점, 정해진 경로대로 굴렸을 때 나오는 면을 정확히 맞히면 100점을 드립니다.</div>
-
-  <div class="steps">
-    <div class="step-dot" id="dot1"><span class="n">1</span>참가자 정보</div>
-    <div class="step-dot" id="dot2"><span class="n">2</span>눈 맞추기</div>
-    <div class="step-dot" id="dot3"><span class="n">3</span>완료</div>
-  </div>
 
   <div class="card" id="page1">
     <div class="field">
       <label for="nameInput">이름</label>
-      <input type="text" id="nameInput" placeholder="신윤섭" autocomplete="name">
+      <input type="text" id="nameInput" placeholder="홍길동" autocomplete="name">
     </div>
     <div class="field">
       <label for="studentIdInput">학번</label>
-      <input type="text" id="studentIdInput" placeholder="20260123" inputmode="numeric" maxlength="8" autocomplete="off">
+      <input type="text" id="studentIdInput" placeholder="202xxxxx" inputmode="numeric" maxlength="8" autocomplete="off">
     </div>
     <div class="field">
       <label for="idInput">POVIS ID</label>
-      <input type="text" id="idInput" placeholder="shinyunseob" autocomplete="off">
+      <input type="text" id="idInput" placeholder="honggildong" autocomplete="off">
       <div class="error" id="page1Error">이름, POVIS ID를 모두 입력하고 학번은 숫자 8자리로 적어 주세요.</div>
     </div>
     <button class="primary" id="toStep2">문제 풀러 가기</button>
@@ -188,8 +211,8 @@ button.secondary:hover{border-color:var(--accent);}
         <h3>현재 주사위 &amp; 이동 경로</h3>
         <div class="path-stage"><div class="path-grid" id="pathGrid"></div></div>
         <div class="hint-sm">
-          지도 위 파란 칸에 놓인 주사위가 표시된 순서대로(①→②→③→④) <b>4칸</b>을 굴러 이동합니다.
-          마지막 <b>?</b> 칸에 도착했을 때 <b>윗면에 어떤 모양이 보일지</b> 오른쪽 주사위를 돌려서 맞혀 보세요.
+          현재 <b>주사위의 윗면</b>은 <b id="startFaceLabel">-</b>입니다. 이 주사위가 지도 위에 표시된 순서대로(①→②→③→④) <b>4칸</b>을 굴러 이동합니다.
+          마지막 <b>?</b> 칸에 도착했을 때 <b>주사위의 윗면에 어떤 모양이 보일지</b> 오른쪽 주사위를 돌려서 맞혀 보세요.
         </div>
       </div>
       <div class="pane">
@@ -251,49 +274,32 @@ let name = '', povisId = '', studentId = '';
 let finalScore = 0;
 let outcomeText = '';
 
-/* ---------- 3D 큐브 회전 행렬 도우미 ---------- */
-function identity3(){ return [[1,0,0],[0,1,0],[0,0,1]]; }
-function matMul(A,B){
-  const R=[[0,0,0],[0,0,0],[0,0,0]];
-  for(let i=0;i<3;i++){
-    for(let j=0;j<3;j++){
-      let s=0;
-      for(let k=0;k<3;k++) s += A[i][k]*B[k][j];
-      R[i][j]=s;
-    }
-  }
-  return R;
-}
-function rotX(deg){ const t=deg*Math.PI/180, c=Math.cos(t), s=Math.sin(t); return [[1,0,0],[0,c,-s],[0,s,c]]; }
-function rotY(deg){ const t=deg*Math.PI/180, c=Math.cos(t), s=Math.sin(t); return [[c,0,s],[0,1,0],[-s,0,c]]; }
-const ROT_FOR_DIR = { N: rotX(-90), S: rotX(90), E: rotY(90), W: rotY(-90) };
-function applyMatrixToCube(el, M){
-  el.style.transform = 'matrix3d(' +
-    M[0][0]+','+M[1][0]+','+M[2][0]+',0,' +
-    M[0][1]+','+M[1][1]+','+M[2][1]+',0,' +
-    M[0][2]+','+M[1][2]+','+M[2][2]+',0,' +
-    '0,0,0,1)';
-}
-
-function createDie(faceFront, faceTopBottom, faceSide, extraClass){
+/* ---------- 아이소메트릭 큐브 도우미 ---------- */
+function createIsoDie(extraClass){
   const stage = document.createElement('div');
-  stage.className = 'die-stage ' + extraClass;
-  const piece = document.createElement('div'); piece.className='piece2';
-  const tilt = document.createElement('div'); tilt.className='tilt2';
-  const cube = document.createElement('div'); cube.className='cube2';
-  const layout = [
-    ['front', faceFront], ['back', faceFront],
-    ['top', faceTopBottom], ['bottom', faceTopBottom],
-    ['left', faceSide], ['right', faceSide]
-  ];
-  layout.forEach(function(pair){
+  stage.className = 'die-stage ' + (extraClass || '');
+  const cube = document.createElement('div');
+  cube.className = 'iso-cube';
+  ['top','bottom','front','back','left','right'].forEach(function(cls){
     const f = document.createElement('div');
-    f.className = 'face2 ' + pair[0];
-    f.innerHTML = FACE_ICON[pair[1]];
+    f.className = 'iso-face ' + cls;
     cube.appendChild(f);
   });
-  tilt.appendChild(cube); piece.appendChild(tilt); stage.appendChild(piece);
+  stage.appendChild(cube);
   return { stage: stage, cube: cube };
+}
+function setDieFaces(stage, topVal, vertVal, horizVal){
+  stage.querySelector('.iso-face.top').innerHTML = FACE_ICON[topVal];
+  stage.querySelector('.iso-face.bottom').innerHTML = FACE_ICON[topVal];
+  stage.querySelector('.iso-face.front').innerHTML = FACE_ICON[vertVal];
+  stage.querySelector('.iso-face.back').innerHTML = FACE_ICON[vertVal];
+  stage.querySelector('.iso-face.left').innerHTML = FACE_ICON[horizVal];
+  stage.querySelector('.iso-face.right').innerHTML = FACE_ICON[horizVal];
+}
+function bounceDie(stage){
+  stage.classList.remove('bounce');
+  void stage.offsetWidth;
+  stage.classList.add('bounce');
 }
 
 /* 자체 원근감 없이 조상(경로 맵)의 3D 좌표계를 그대로 물려받는 주사위 (맵 위에 얹히는 용도) */
@@ -316,6 +322,9 @@ function createGridDie(faceFront, faceTopBottom, faceSide){
 
 /* ---------- 경로 그리드 렌더링 (시작 칸 위에 주사위가 실제로 얹혀 있음) ---------- */
 function renderPathGrid(){
+  const startFaceEl = document.getElementById('startFaceLabel');
+  if(startFaceEl) startFaceEl.innerHTML = FACE_ICON[START.top] + ' ' + START.top;
+
   let r=0, c=0;
   const cells = [{ r:0, c:0, label:'출발' }];
   PATH.forEach(function(dir, i){
@@ -360,8 +369,7 @@ function renderPathGrid(){
 
 /* ---------- 정답용(오른쪽) 인터랙티브 주사위 ---------- */
 let answerState = { top:START.top, horiz:START.horiz, vert:START.vert };
-let answerMatrix = identity3();
-let answerCubeEl = null;
+let answerStageEl = null;
 
 function updateAnswerUI(){
   document.getElementById('answerFaceLabel').innerHTML = FACE_ICON[answerState.top] + ' ' + answerState.top;
@@ -370,21 +378,22 @@ function updateAnswerUI(){
 function applySwipe(dir){
   if(dir==='N' || dir==='S'){ const t=answerState.top; answerState.top=answerState.vert; answerState.vert=t; }
   else { const t=answerState.top; answerState.top=answerState.horiz; answerState.horiz=t; }
-  answerMatrix = matMul(ROT_FOR_DIR[dir], answerMatrix);
-  applyMatrixToCube(answerCubeEl, answerMatrix);
+  setDieFaces(answerStageEl, answerState.top, answerState.vert, answerState.horiz);
+  bounceDie(answerStageEl);
   updateAnswerUI();
 }
 
 function resetAnswer(){
   answerState = { top:START.top, horiz:START.horiz, vert:START.vert };
-  answerMatrix = identity3();
-  applyMatrixToCube(answerCubeEl, answerMatrix);
+  setDieFaces(answerStageEl, answerState.top, answerState.vert, answerState.horiz);
+  bounceDie(answerStageEl);
   updateAnswerUI();
 }
 
 function buildAnswerDie(){
-  const d = createDie(START.top, START.vert, START.horiz, 'answer');
-  answerCubeEl = d.cube;
+  const d = createIsoDie('answer');
+  answerStageEl = d.stage;
+  setDieFaces(answerStageEl, answerState.top, answerState.vert, answerState.horiz);
   document.getElementById('answerStage').appendChild(d.stage);
 
   let dragging=false, startX=0, startY=0;
@@ -416,7 +425,8 @@ document.getElementById('resetBtn').addEventListener('click', resetAnswer);
 
 /* ---------- 단계 전환 ---------- */
 function setDot(n, cls){
-  document.getElementById('dot'+n).className = 'step-dot' + (cls ? ' '+cls : '');
+  const el = document.getElementById('dot'+n);
+  if(el) el.className = 'step-dot' + (cls ? ' '+cls : '');
 }
 
 document.getElementById('studentIdInput').addEventListener('input', function(e){
@@ -452,7 +462,7 @@ document.getElementById('submitBtn').addEventListener('click', function(){
 });
 
 /* ---------- 구글폼 제출 (기존 설문과 동일한 폼) ---------- */
-const GOOGLE_FORM_ID = '1FAIpQLScXQPZjJbcZ2cx_IAqWZJiu-LEo5vcNgdr2w_T_lHXvrwCfCA';
+const GOOGLE_FORM_ID = '1FAIpQLSdjydePevxkBOjo4y1tePjA6j8ePdGqIXZ6fgwQjdUwnHc6Cw';
 const GOOGLE_FORM_ENTRY = {
   name: 'entry.866975153',
   povisId: 'entry.1745020199',
