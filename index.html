@@ -49,6 +49,7 @@ body{
   padding:14px 22px; margin:0 auto 22px; display:block;
   width:fit-content; max-width:100%; box-sizing:border-box; line-height:1.4;
 }
+.event-banner .banner-big{ font-size:150%; }
 .poster-bar{height:1px; margin-bottom:26px; max-width:560px; margin-left:auto; margin-right:auto; background:var(--line);}
 .poster-title{display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap; margin:0;}
 .poster-title .k, .poster-title .p{font-family:var(--font-poster); font-weight:700; font-size:clamp(22px,5.8vw,30px); letter-spacing:.03em; line-height:1;}
@@ -105,8 +106,8 @@ button.secondary:active{border-color:var(--accent); background:var(--panel); tra
 /* --- duel layout --- */
 .duel{display:flex; flex-wrap:wrap; gap:18px;}
 .pane{flex:1 1 260px; min-width:240px; background:var(--panel-2); border:1px solid var(--line); border-radius:12px; padding:22px;}
-.pane h3{font-family:var(--font-display); font-size:12px; letter-spacing:.06em; color:var(--text-dim); margin:0 0 18px; text-transform:uppercase; text-align:center;}
-.pane .hint-sm{font-size:11px; color:var(--text-dim); text-align:center; margin-top:10px; line-height:1.6;}
+.pane h3{font-family:var(--font-display); font-size:10px; letter-spacing:.06em; color:var(--text-dim); margin:0; text-transform:uppercase; text-align:center;}
+.pane .hint-sm{font-size:11px; color:var(--text-dim); text-align:center; margin-top:0; line-height:1.6;}
 
 /* --- 3D dice (isometric, no perspective) --- */
 .die-stage{ --size:120px; width:var(--size); height:var(--size); margin:6px auto; position:relative; }
@@ -127,20 +128,20 @@ button.secondary:active{border-color:var(--accent); background:var(--panel); tra
 .iso-face.back{ transform:rotateY(180deg) translateZ(calc(var(--size)/2 + 1px)); background:var(--postech); }
 .iso-face.left{ transform:rotateY(-90deg) translateZ(calc(var(--size)/2 + 1px)); background:var(--postech-dark); }
 .iso-face.right{ transform:rotateY(90deg) translateZ(calc(var(--size)/2 + 1px)); background:var(--postech-dark); }
-.die-stage.answer{ --size:98px; margin:44px auto 34px; touch-action:none; cursor:grab; }
+.die-stage.answer{ --size:69px; margin:34px auto 30px; touch-action:none; cursor:grab; }
 .die-stage.answer:active{ cursor:grabbing; }
 .die-stage.bounce .iso-cube{ animation:isoBounce .3s ease; }
 @keyframes isoBounce{0%{transform:rotateX(-30deg) rotateY(-45deg) scale(1);}45%{transform:rotateX(-30deg) rotateY(-45deg) scale(1.15);}100%{transform:rotateX(-30deg) rotateY(-45deg) scale(1);}}
 
-.current-face-label{ text-align:center; font-size:13px; margin-top:16px; font-family:var(--font-display); }
-.current-face-label b{ color:var(--accent); font-size:16px; }
+.current-face-label{ text-align:center; font-size:11px; margin-top:14px; font-family:var(--font-display); }
+.current-face-label b{ color:var(--accent); font-size:13px; }
 .current-face-label .ico{ width:16px; height:16px; }
 
 /* --- path grid (주사위와 동일한 아이소메트릭 시점, 주사위가 시작 칸 위에 얹혀 있음) --- */
-.path-stage{ perspective:700px; margin:14px auto 10px; display:flex; justify-content:center; }
+.path-stage{ perspective:700px; margin:-25px auto -8px; display:flex; justify-content:center; }
 .path-grid{ display:grid; gap:7px; transform-style:preserve-3d; transform:rotateX(-20deg) rotateY(28deg); width:max-content; }
 .path-cell{
-  width:56px; height:56px; border-radius:6px; background:var(--panel);
+  width:45px; height:45px; border-radius:6px; background:var(--panel);
   border:1px solid var(--line); display:flex; align-items:center; justify-content:center;
   position:relative; font-size:13px; color:var(--text-dim); transform-style:preserve-3d;
   box-shadow:0 5px 0 rgba(0,0,0,.25), inset 0 0 0 1px rgba(255,255,255,.4);
@@ -151,9 +152,9 @@ button.secondary:active{border-color:var(--accent); background:var(--panel); tra
 .path-cell.final{ background:linear-gradient(155deg, var(--accent), #8a6528); color:#fff; border-color:var(--accent); font-size:20px;
   box-shadow:0 5px 0 #6e4f1c, inset 0 0 0 1px rgba(255,255,255,.2); }
 .path-cell .arrow{ position:absolute; font-size:16px; color:var(--accent); z-index:2; font-weight:700; }
-.path-cell .arrow.N{ top:-15px; } .path-cell .arrow.S{ bottom:-15px; }
-.path-cell .arrow.E{ right:-15px; } .path-cell .arrow.W{ left:-15px; }
-.grid-die{ --size:44px; width:var(--size); height:var(--size); transform-style:preserve-3d; transform:translateZ(calc(var(--size)/2)); }
+.path-cell .arrow.N{ top:-12px; } .path-cell .arrow.S{ bottom:-12px; }
+.path-cell .arrow.E{ right:-12px; } .path-cell .arrow.W{ left:-12px; }
+.grid-die{ --size:35px; width:var(--size); height:var(--size); transform-style:preserve-3d; transform:translateZ(calc(var(--size)/2)); }
 .grid-die .face2{
   position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
   color:#fff; font-size:calc(var(--size) * 0.5);
@@ -168,7 +169,7 @@ button.secondary:active{border-color:var(--accent); background:var(--panel); tra
 .grid-die .face2.top{ transform:rotateX(-90deg) translateZ(calc(var(--size)/2 + 1px)); }
 .grid-die .face2.bottom{ transform:rotateX(90deg) translateZ(calc(var(--size)/2 + 1px)); }
 
-.swipe-hint{ text-align:center; margin-top:16px; font-size:11px; color:var(--text-dim); }
+.swipe-hint{ text-align:center; margin-top:0; font-size:11px; color:var(--text-dim); }
 
 .ico{width:1em; height:1em; display:inline-block; vertical-align:-0.15em;}
 .ico.line{fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round;}
@@ -182,11 +183,13 @@ button.secondary:active{border-color:var(--accent); background:var(--panel); tra
 </head>
 <body>
 <div class="wrap">
-  <div class="event-banner">과학퀴즈 경기중 이벤트 : 가위바위보 체스 튜토리얼</div>
+  <div id="pageHeader">
+  <div class="event-banner">과학퀴즈 경기중 이벤트:<br><span class="banner-big">가위바위보 체스 튜토리얼</span></div>
   <div class="poster-bar"></div>
   <div class="poster-title"><span class="k">KAIST</span><span class="vs">VS</span><span class="p">POSTECH</span></div>
   <div class="poster-sub">설문 1 · Science Quiz · 주사위 눈 맞추기</div>
-  <div class="subtitle">이름과 POVIS ID만 남겨도 참가 점수 10점, 정해진 경로대로 굴렸을 때 나오는 면을 정확히 맞히면 100점을 드립니다.</div>
+  <div class="subtitle">정해진 경로대로 굴렸을 때 나오는 면을 정확히 맞히면 100점을 드립니다. 참가만 해도 점수가 있으니 바로 참여해보세요!</div>
+  </div>
 
   <div class="card" id="page1">
     <div class="field">
@@ -212,16 +215,16 @@ button.secondary:active{border-color:var(--accent); background:var(--panel); tra
         <div class="path-stage"><div class="path-grid" id="pathGrid"></div></div>
         <div class="hint-sm">
           현재 <b>주사위의 윗면</b>은 <b id="startFaceLabel">-</b>입니다. 이 주사위가 지도 위에 표시된 순서대로(①→②→③→④) <b>4칸</b>을 굴러 이동합니다.
-          마지막 <b>?</b> 칸에 도착했을 때 <b>주사위의 윗면에 어떤 모양이 보일지</b> 오른쪽 주사위를 돌려서 맞혀 보세요.
+          마지막 <b>?</b> 칸에 도착했을 때 <b>주사위의 윗면에 어떤 모양이 보일지</b> 아래 주사위를 돌려서 맞혀 보세요.
         </div>
       </div>
       <div class="pane">
         <h3>정답 주사위 (스와이프로 회전)</h3>
         <div class="die-stage answer" id="answerStage"></div>
         <div class="current-face-label">현재 윗면: <b id="answerFaceLabel">-</b></div>
-        <div class="swipe-hint">화면을 스와이프해 굴리세요</div>
-        <button class="secondary" id="resetBtn" style="margin-top:18px;">↺ 처음으로 되돌리기</button>
-        <button class="primary" id="submitBtn" style="margin-top:12px;">이 면으로 정답 제출하기</button>
+        <div class="swipe-hint"></div>
+        <button class="secondary" id="resetBtn" style="margin-top:8px; padding:8px; font-size:12px;">↺ 처음으로 되돌리기</button>
+        <button class="primary" id="submitBtn" style="margin-top:10px; padding:10px; font-size:13px;">이 면으로 정답 제출하기</button>
       </div>
     </div>
   </div>
@@ -233,6 +236,7 @@ button.secondary:active{border-color:var(--accent); background:var(--panel); tra
         <div class="stamp-score" id="resultScore">0점</div>
       </div>
       <div class="msg" id="resultMsg"></div>
+      <div class="msg" style="font-weight:700; color:var(--accent); margin-top:10px;">다음퀴즈도 참여해주세요!!</div>
     </div>
     <div class="summary">
       <div><span>이름</span><span id="sumName">-</span></div>
@@ -342,8 +346,8 @@ function renderPathGrid(){
 
   const grid = document.getElementById('pathGrid');
   grid.innerHTML = '';
-  grid.style.gridTemplateColumns = 'repeat(' + cols + ', 56px)';
-  grid.style.gridTemplateRows = 'repeat(' + rows + ', 56px)';
+  grid.style.gridTemplateColumns = 'repeat(' + cols + ', 45px)';
+  grid.style.gridTemplateRows = 'repeat(' + rows + ', 45px)';
 
   cells.forEach(function(cell, i){
     const el = document.createElement('div');
@@ -375,9 +379,15 @@ function updateAnswerUI(){
   document.getElementById('answerFaceLabel').innerHTML = FACE_ICON[answerState.top] + ' ' + answerState.top;
 }
 
-function applySwipe(dir){
-  if(dir==='N' || dir==='S'){ const t=answerState.top; answerState.top=answerState.vert; answerState.vert=t; }
-  else { const t=answerState.top; answerState.top=answerState.horiz; answerState.horiz=t; }
+function applySwipe(action){
+  if(action === 'SPIN'){
+    // 옆면을 좌우로 돌리는 스핀: 윗면은 그대로, 나머지 두 옆면만 서로 자리 교체
+    const t = answerState.vert; answerState.vert = answerState.horiz; answerState.horiz = t;
+  } else if(action === 'N' || action === 'S'){
+    const t=answerState.top; answerState.top=answerState.vert; answerState.vert=t;
+  } else {
+    const t=answerState.top; answerState.top=answerState.horiz; answerState.horiz=t;
+  }
   setDieFaces(answerStageEl, answerState.top, answerState.vert, answerState.horiz);
   bounceDie(answerStageEl);
   updateAnswerUI();
@@ -396,10 +406,31 @@ function buildAnswerDie(){
   setDieFaces(answerStageEl, answerState.top, answerState.vert, answerState.horiz);
   document.getElementById('answerStage').appendChild(d.stage);
 
-  let dragging=false, startX=0, startY=0;
+  let dragging=false, startX=0, startY=0, zone=null;
   const stage = d.stage;
+
+  // die-stage 중심 기준 터치 시작 위치의 각도로 어느 면(윗면/좌측면/우측면)을 눌렀는지 판별
+  function classifyZone(clientX, clientY){
+    const rect = stage.getBoundingClientRect();
+    const cx = rect.left + rect.width/2, cy = rect.top + rect.height/2;
+    const dx = clientX - cx, dy = clientY - cy;
+    const angle = Math.atan2(dy, dx) * 180 / Math.PI; // -180..180, 0=오른쪽, 90=아래, -90=위
+    if(angle > -150 && angle <= -30) return 'top';
+    if(angle > -30 && angle <= 90) return 'right';
+    return 'left';
+  }
+  // 스와이프 델타를 8방향(E,SE,S,SW,W,NW,N,NE)으로 분류
+  function classifySwipeDir8(dx, dy){
+    let angle = Math.atan2(dy, dx) * 180 / Math.PI;
+    if(angle < 0) angle += 360;
+    const idx = Math.round(angle / 45) % 8;
+    const dirs = ['E','SE','S','SW','W','NW','N','NE'];
+    return dirs[idx];
+  }
+
   stage.addEventListener('pointerdown', function(e){
     dragging = true; startX = e.clientX; startY = e.clientY;
+    zone = classifyZone(e.clientX, e.clientY);
     try{ stage.setPointerCapture(e.pointerId); }catch(err){}
   });
   stage.addEventListener('pointermove', function(e){
@@ -411,9 +442,25 @@ function buildAnswerDie(){
     const dx = e.clientX - startX, dy = e.clientY - startY;
     const threshold = 26;
     if(Math.max(Math.abs(dx), Math.abs(dy)) < threshold) return;
-    let dir;
-    if(Math.abs(dx) > Math.abs(dy)) dir = dx > 0 ? 'E' : 'W';
-    else dir = dy > 0 ? 'N' : 'S';
+
+    let dir = null;
+    if(zone === 'top'){
+      // 윗면에서 시작: 대각선 아래-왼쪽 / 아래-오른쪽 스와이프에만 반응 (굴러서 윗면이 바뀜)
+      if(dy <= 0) return;
+      dir = dx < 0 ? 'N' : 'E';
+    } else if(zone === 'left'){
+      // 좌측 옆면(보)에서 시작: 좌/우/대각선 아래-오른쪽=제자리 스핀, 위=보가 윗면으로 굴러 올라감
+      const swipeDir = classifySwipeDir8(dx, dy);
+      if(swipeDir === 'N' || swipeDir === 'NE') dir = 'N';
+      else if(swipeDir === 'W' || swipeDir === 'E' || swipeDir === 'SE') dir = 'SPIN';
+      else return;
+    } else {
+      // 우측 옆면(바위)에서 시작: 좌/우/대각선 아래-왼쪽=제자리 스핀, 위=바위가 윗면으로 굴러 올라감
+      const swipeDir = classifySwipeDir8(dx, dy);
+      if(swipeDir === 'N' || swipeDir === 'NW') dir = 'E';
+      else if(swipeDir === 'W' || swipeDir === 'E' || swipeDir === 'SW') dir = 'SPIN';
+      else return;
+    }
     applySwipe(dir);
   });
   stage.addEventListener('pointercancel', function(){ dragging = false; });
@@ -449,6 +496,7 @@ document.getElementById('toStep2').addEventListener('click', function(){
   err.classList.remove('show');
   document.getElementById('page1').classList.add('hidden');
   document.getElementById('page2').classList.remove('hidden');
+  document.getElementById('pageHeader').classList.add('hidden');
   setDot(1,'done'); setDot(2,'active');
   renderPathGrid();
   buildAnswerDie();
